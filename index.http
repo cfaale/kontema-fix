@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontema Entreprenør</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #222; }
+    header { background-color: #2e5c1d; color: white; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-weight: 500; font-size: 0.95em; cursor: pointer; }
+    nav a:hover { text-decoration: underline; }
+    .hero { background: url('images/hero.jpg') center/cover no-repeat; height: 70vh; display: flex; justify-content: center; align-items: center; text-align: center; position: relative; flex-direction: column; }
+    .hero::after { content: ""; position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.45); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+    .hero-logo { max-width: 160px; margin-bottom: 1rem; }
+    .hero h2 { position: relative; font-size: 2.2em; max-width: 90%; padding: 16px; background-color: rgba(0, 0, 0, 0.5); color: white; border-radius: 8px; }
+    section { max-width: 1000px; margin: 0 auto 60px; padding: 40px 24px; background-color: white; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 8px; }
+    h2 { color: #2e5c1d; margin-top: 0; }
+    .services { display: flex; flex-wrap: wrap; gap: 20px; }
+    .service { width: calc(50% - 10px); background: #f9f9f9; padding: 12px; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.05); text-align: center; }
+    .service img { width: 100%; border-radius: 4px; margin-bottom: 10px; }
+    form { display: flex; flex-direction: column; gap: 12px; }
+    input, textarea { padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; font-size: 1em; }
+    button { background-color: #2e5c1d; color: white; border: none; padding: 12px; font-size: 1em; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #254b18; }
+    footer { background-color: #a8d38c; padding: 24px 20px; text-align: center; font-size: 0.95em; }
+    footer a { color: #2e5c1d; text-decoration: none; }
+    .hidden { display: none; }
+    blockquote { margin: 20px 0; padding: 12px 20px; background: #f1f1f1; border-left: 4px solid #2e5c1d; }
+    blockquote footer { font-size: 0.9em; color: #555; text-align: right; }
+    @media (max-width: 768px) {
+      .service { width: 100%; }
+      #mobile-contact-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #2e5c1d;
+        color: white;
+        z-index: 1001;
+        padding: 12px;
+      }
+      #mobile-contact-bar button {
+        background-color: white;
+        color: #2e5c1d;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Kontema Entreprenør</h1>
+  <nav>
+    <a onclick="showTab('hjem')">Hjem</a>
+    <a onclick="showTab('tjenester')">Tjenester</a>
+    <a onclick="showTab('omoss')">Om oss</a>
+    <a onclick="showTab('referanser')">Referanser</a>
+    <a onclick="showTab('kontakt')">Kontakt</a>
+  </nav>
+</header>
+
+<div class="hero" id="hero">
+  <div class="hero-content">
+    <img src="images/logo.webp" alt="Kontema logo" class="hero-logo">
+    <h2>Oppussing og uteromsarbeid i Stor-Oslo</h2>
+  </div>
+</div>
+
+<section id="hjem">
+  <h2>Velkommen</h2>
+  <p>Kontema Entreprenør leverer kvalitet, punktlighet og godt håndverk. Vi har spesialisert oss på prosjekter innen oppussing, maling, og utvendig oppgradering av eiendom.</p>
+</section>
+
+<section id="tjenester" class="hidden">
+  <h2>Tjenester</h2>
+  <div class="services">
+    <div class="service"><img src="images/icon-hammer.png" style="width:40px;"><br><img src="images/oppussing.jpg"><p>Oppussing</p></div>
+    <div class="service"><img src="images/icon-lawn.png" style="width:40px;"><br><img src="images/plen.jpg"><p>Legging av ferdigplen, beplantning, mm.</p></div>
+    <div class="service"><img src="images/icon-paint.png" style="width:40px;"><br><img src="images/maling.jpg"><p>Maling (innvendig og utvendig)</p></div>
+    <div class="service"><img src="images/icon-deck.png" style="width:40px;"><br><img src="images/terrasse.jpg"><p>Bygging av terrasse, rekkverk, pergola, mm.</p></div>
+  </div>
+</section>
+
+<section id="omoss" class="hidden">
+  <h2>Om oss</h2>
+  <ul>
+    <li>15 års erfaring i bransjen</li>
+    <li>Høy kvalitet og nøyaktighet</li>
+    <li>Skreddersydde løsninger</li>
+    <li>Konkurransedyktige priser</li>
+    <li>Punktlighet og god kommunikasjon</li>
+  </ul>
+  <p>Vi er et nyetablert norsk entreprenørselskap med 15 års erfaring innen oppussing og uterom. Vi setter kvalitet, pålitelighet og solid håndverk i førersetet for hvert prosjekt.</p>
+</section>
+
+<section id="referanser" class="hidden">
+  <h2>Referanser</h2>
+  <blockquote><p>"Kontema gjorde en fantastisk jobb med terrassen vår."</p><footer>– Anne L., Bærum</footer></blockquote>
+  <blockquote><p>"Vi er svært fornøyde med både kommunikasjonen og sluttresultatet."</p><footer>– Morten H., Lillestrøm</footer></blockquote>
+  <blockquote><p>"Raskt levert, høy kvalitet og godt håndverk."</p><footer>– Camilla R., Asker</footer></blockquote>
+</section>
+
+<section id="kontakt" class="hidden">
+  <h2>Kontakt oss</h2>
+  <p>Telefon: <a href="tel:004747950476">479 50 476</a></p>
+  <p>E-post: <a href="mailto:post@kontema.no">post@kontema.no</a></p>
+  <form action="https://formspree.io/f/movdnyay" method="POST" onsubmit="return showThankYou(this)">
+    <input type="text" name="Navn" placeholder="Navn" required>
+    <input type="email" name="E-post" placeholder="E-postadresse" required>
+    <textarea name="Melding" rows="5" placeholder="Din melding..." required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p id="thank-you-message" style="display:none; color:green; font-weight:bold; margin-top:1rem;">Takk! Din melding er sendt.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Kontema Entreprenør – <a href="tel:004747950476">☎️ 479 50 476</a> – <a href="mailto:post@kontema.no">✉️ post@kontema.no</a></p>
+</footer>
+
+<script>
+  const tabs = ["hjem", "tjenester", "omoss", "referanser", "kontakt"];
+  function showTab(id) {
+    tabs.forEach(t => document.getElementById(t).classList?.add("hidden"));
+    const section = document.getElementById(id);
+    if (section) {
+      section.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    const hero = document.getElementById("hero");
+    hero.style.display = (id === "hjem") ? "flex" : "none";
+  }
+
+  function showThankYou(form) {
+    const thankYou = document.getElementById("thank-you-message");
+    form.style.display = "none";
+    thankYou.style.display = "block";
+    return true;
+  }
+</script>
+
+<div id="mobile-contact-bar">
+  <button onclick="showTab('kontakt')">Kontakt oss</button>
+</div>
+
+</body>
+</html>
